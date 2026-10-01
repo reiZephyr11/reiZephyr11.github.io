@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>STT Terpadu Nurul Fikri</title>
+
+    <title>Untuk Lumer 🌸</title>
 
     <style>
-        /* =========================
-           DASAR
-        ========================= */
 
         * {
             margin: 0;
@@ -16,531 +15,521 @@
             box-sizing: border-box;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
         body {
             font-family: Arial, sans-serif;
-            background: #f2f5f9;
-            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* ================= LOGIN ================= */
+
+        #loginPage {
             min-height: 100vh;
-        }
-
-
-        /* =========================
-           MENU NAVIGASI
-        ========================= */
-
-        nav {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-
-            background: #1769aa;
-            padding: 15px 20px;
-
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
-        }
-
-        nav ul {
-            list-style: none;
 
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 30px;
+
+            background:
+                radial-gradient(circle at top, #ffd6e7, transparent 40%),
+                linear-gradient(135deg, #fff0f6, #ffe1ec);
         }
 
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-
-            padding: 8px 12px;
-            border-radius: 8px;
-
-            transition: 0.3s ease;
-        }
-
-        nav ul li a:hover {
-            background: white;
-            color: #1769aa;
-        }
-
-
-        /* =========================
-           HEADER / HOME
-        ========================= */
-
-        .container {
+        .login-box {
             width: 90%;
-            max-width: 900px;
+            max-width: 380px;
 
-            margin: 50px auto 30px;
-            padding: 45px 25px;
+            padding: 40px 30px;
+
+            background: rgba(255,255,255,0.9);
+
+            border-radius: 25px;
 
             text-align: center;
 
-            background: white;
-            border-radius: 20px;
-
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-
-            transition: 0.3s ease;
-        }
-
-        .container:hover {
-            transform: translateY(-5px);
-
             box-shadow:
-                0 12px 30px rgba(0, 0, 0, 0.15);
+                0 20px 50px rgba(0,0,0,0.15);
+
+            animation: muncul 1s ease;
         }
 
-        .container h1 {
-            color: #1769aa;
-            font-size: 32px;
-            margin-bottom: 15px;
-        }
-
-        .container p {
-            color: #666;
-            font-size: 18px;
-        }
-
-
-        /* =========================
-           BIODATA
-        ========================= */
-
-        #biodata {
-            width: 90%;
-            max-width: 900px;
-
-            margin: 0 auto 40px;
-            padding: 30px;
-
-            background: white;
-
-            border-left: 6px solid #1769aa;
-            border-radius: 15px;
-
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-
-            transition: 0.3s ease;
-        }
-
-        #biodata:hover {
-            transform: translateY(-5px);
-
-            box-shadow:
-                0 12px 30px rgba(0, 0, 0, 0.15);
-        }
-
-        #biodata h2 {
-            color: #1769aa;
-            margin-bottom: 25px;
-            font-size: 24px;
-        }
-
-
-        /* DATA BIODATA */
-
-        .data {
-            display: flex;
-
-            padding: 14px;
-
-            border-bottom: 1px solid #eee;
-            border-radius: 8px;
-
-            transition: 0.3s ease;
-        }
-
-        .data:hover {
-            background: #f0f7ff;
-
-            transform: translateX(5px);
-        }
-
-        .data:last-child {
-            border-bottom: none;
-        }
-
-        .label {
-            width: 130px;
-
-            font-weight: bold;
-            color: #555;
-        }
-
-        .isi {
-            flex: 1;
-            color: #333;
-        }
-
-
-        /* =========================
-           ALASAN
-        ========================= */
-
-        .alasan {
-            margin-top: 20px;
-            padding: 20px;
-
-            background: #f5f9fd;
-
-            border-radius: 10px;
-
-            line-height: 1.6;
-
-            transition: 0.3s ease;
-        }
-
-        .alasan:hover {
-            background: #eaf4ff;
-            transform: scale(1.01);
-        }
-
-        .alasan h3 {
-            color: #1769aa;
+        .lock {
+            font-size: 60px;
             margin-bottom: 10px;
         }
 
-
-        /* =========================
-           PORTFOLIO
-        ========================= */
-
-        #portfolio {
-            width: 90%;
-            max-width: 900px;
-
-            margin: 0 auto 50px;
-            padding: 30px;
-
-            background: white;
-
-            border-radius: 15px;
-
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-
-            transition: 0.3s ease;
+        .login-box h1 {
+            color: #d94f83;
+            margin-bottom: 8px;
         }
 
-        #portfolio:hover {
-            transform: translateY(-5px);
-
-            box-shadow:
-                0 12px 30px rgba(0, 0, 0, 0.15);
-        }
-
-        #portfolio h2 {
-            color: #1769aa;
+        .login-box p {
+            color: #777;
             margin-bottom: 20px;
         }
 
+        .login-box input {
+            width: 100%;
+            padding: 14px;
+            margin: 8px 0;
 
-        /* =========================
-           RUNNING TEXT WARNA WARNI
-        ========================= */
+            border: 1px solid #ffc1d8;
+            border-radius: 12px;
 
-        .marquee {
+            outline: none;
+            font-size: 15px;
+        }
+
+        .login-box input:focus {
+            border-color: #e85d91;
+
+            box-shadow:
+                0 0 10px rgba(232,93,145,0.2);
+        }
+
+        .login-box button {
             width: 100%;
 
+            padding: 14px;
+            margin-top: 15px;
+
+            border: none;
+            border-radius: 12px;
+
+            background:
+                linear-gradient(135deg, #e85d91, #d83e78);
+
+            color: white;
+
+            font-size: 16px;
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .login-box button:hover {
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 10px 20px rgba(216,62,120,0.3);
+        }
+
+        #error {
+            color: #e53935;
+            margin-top: 15px;
+        }
+
+
+        /* ================= HALAMAN UTAMA ================= */
+
+        #mainPage {
+            display: none;
+            background: #fff7fa;
+        }
+
+
+        /* ================= BUNGA PEMBUKA ================= */
+
+        .flower-section {
+            min-height: 100vh;
+
+            display: flex;
+            flex-direction: column;
+
+            justify-content: center;
+            align-items: center;
+
+            position: relative;
             overflow: hidden;
-            white-space: nowrap;
+
+            background:
+                linear-gradient(
+                    to bottom,
+                    #fff0f6,
+                    #ffe0eb
+                );
+        }
+
+        .opening-text {
+            color: #c83f70;
+            font-size: 42px;
+
+            opacity: 0;
+
+            animation:
+                textMuncul 2s 2.5s forwards;
+        }
+
+        .sub-text {
+            margin-top: 15px;
+
+            color: #777;
+
+            opacity: 0;
+
+            animation:
+                textMuncul 2s 3s forwards;
+        }
+
+
+        /* ================= BUNGA ================= */
+
+        .flower {
+            position: absolute;
+
+            font-size: 70px;
+
+            opacity: 0;
+
+            animation:
+                flowerAppear 1s forwards,
+                floating 4s ease-in-out infinite;
+        }
+
+        .flower1 {
+            left: 10%;
+            top: 20%;
+            animation-delay: 0.5s;
+        }
+
+        .flower2 {
+            right: 12%;
+            top: 15%;
+            animation-delay: 1s;
+        }
+
+        .flower3 {
+            left: 18%;
+            bottom: 20%;
+            animation-delay: 1.5s;
+        }
+
+        .flower4 {
+            right: 20%;
+            bottom: 15%;
+            animation-delay: 2s;
+        }
+
+        .flower5 {
+            left: 45%;
+            top: 10%;
+            animation-delay: 2.5s;
+        }
+
+
+        /* ================= KARTU ================= */
+
+        .card-section {
+            min-height: 100vh;
+
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            padding: 60px 20px;
+
+            background:
+                radial-gradient(
+                    circle at top,
+                    #ffd7e6,
+                    transparent 45%
+                ),
+                #fff7fa;
+        }
+
+        .card {
+            width: 90%;
+            max-width: 650px;
+
+            padding: 45px 35px;
+
+            background: rgba(255,255,255,0.95);
+
+            border-radius: 25px;
+
+            text-align: center;
+
+            box-shadow:
+                0 20px 60px rgba(200,63,112,0.15);
+
+            animation:
+                cardMuncul 1.5s ease;
+        }
+
+        .card-flower {
+            font-size: 55px;
+            margin-bottom: 10px;
+        }
+
+        .card h2 {
+            color: #c83f70;
+
+            font-size: 32px;
 
             margin-bottom: 25px;
         }
 
-        .marquee span {
-            display: inline-block;
+        .card p {
+            color: #666;
 
-            font-size: 26px;
+            line-height: 1.9;
+
+            margin: 20px 0;
+        }
+
+        .last-message {
+            color: #c83f70 !important;
+
             font-weight: bold;
 
-            background: linear-gradient(
-                90deg,
-                red,
-                orange,
-                yellow,
-                lime,
-                cyan,
-                blue,
-                violet,
-                red
-            );
+            font-size: 18px;
+        }
 
-            background-size: 400% auto;
+        .signature {
+            margin-top: 30px;
 
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: #999;
+
+            font-style: italic;
+        }
+
+
+        /* ================= PENUTUP ================= */
+
+        .ending {
+            min-height: 100vh;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    to bottom,
+                    #ffe5ef,
+                    #ffd3e3
+                );
+
+            padding: 30px;
+        }
+
+        .ending h2 {
+            color: #c83f70;
+
+            font-size: 30px;
+
+            margin: 30px 0 15px;
+        }
+
+        .ending p {
+            color: #777;
+
+            max-width: 600px;
+
+            line-height: 1.8;
+        }
+
+        .ending-flowers {
+            display: flex;
+
+            gap: 25px;
+
+            font-size: 60px;
+
+            flex-wrap: wrap;
+
+            justify-content: center;
+        }
+
+        .ending-flowers span {
+            animation:
+                floating 3s ease-in-out infinite;
+        }
+
+        .ending-flowers span:nth-child(2) {
+            animation-delay: .3s;
+        }
+
+        .ending-flowers span:nth-child(3) {
+            animation-delay: .6s;
+        }
+
+        .ending-flowers span:nth-child(4) {
+            animation-delay: .9s;
+        }
+
+        .ending-flowers span:nth-child(5) {
+            animation-delay: 1.2s;
+        }
+
+        .big-flower {
+            font-size: 100px;
+
+            margin-top: 30px;
 
             animation:
-                jalan 10s linear infinite,
-                warna 4s linear infinite;
+                floating 3s ease-in-out infinite;
         }
 
 
-        /* Gerakan kanan ke kiri */
+        /* ================= ANIMASI ================= */
 
-        @keyframes jalan {
+        @keyframes muncul {
 
-            0% {
-                transform: translateX(100%);
+            from {
+                opacity: 0;
+                transform: scale(0.8);
             }
 
-            100% {
-                transform: translateX(-100%);
-            }
-
-        }
-
-
-        /* Animasi warna */
-
-        @keyframes warna {
-
-            0% {
-                background-position: 0% center;
-            }
-
-            100% {
-                background-position: 400% center;
+            to {
+                opacity: 1;
+                transform: scale(1);
             }
 
         }
 
+        @keyframes textMuncul {
 
-        /* =========================
-           KARTU PORTFOLIO
-        ========================= */
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
 
-        .portfolio-card {
-            padding: 20px;
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
 
-            margin-bottom: 15px;
-
-            background: #f5f9fd;
-
-            border-left: 5px solid #1769aa;
-            border-radius: 10px;
-
-            transition: 0.3s ease;
         }
 
-        .portfolio-card:hover {
-            transform: translateX(8px);
+        @keyframes flowerAppear {
 
-            background: #eaf4ff;
+            from {
+                opacity: 0;
+                transform: scale(0);
+            }
 
-            box-shadow:
-                0 5px 15px rgba(0, 0, 0, 0.08);
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+
         }
 
-        .portfolio-card h3 {
-            color: #1769aa;
+        @keyframes floating {
 
-            margin-bottom: 8px;
+            0%, 100% {
+                transform:
+                    translateY(0)
+                    rotate(-3deg);
+            }
+
+            50% {
+                transform:
+                    translateY(-15px)
+                    rotate(3deg);
+            }
+
         }
 
-        .portfolio-card p {
-            line-height: 1.6;
-            color: #555;
+        @keyframes cardMuncul {
+
+            from {
+                opacity: 0;
+
+                transform:
+                    translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+            }
+
         }
 
 
-        /* =========================
-           RESPONSIVE HP
-        ========================= */
+        /* ================= HP ================= */
 
         @media (max-width: 600px) {
 
-            nav {
-                padding: 12px 5px;
+            .opening-text {
+                font-size: 32px;
             }
 
-            nav ul {
-                gap: 5px;
+            .flower {
+                font-size: 50px;
             }
 
-            nav ul li a {
-                font-size: 13px;
-                padding: 8px 7px;
+            .card {
+                padding: 35px 25px;
             }
 
-
-            .container {
-                margin-top: 40px;
-                padding: 35px 20px;
-            }
-
-            .container h1 {
+            .card h2 {
                 font-size: 27px;
             }
 
-            .container p {
-                font-size: 16px;
+            .ending h2 {
+                font-size: 25px;
             }
 
-
-            #biodata,
-            #portfolio {
-                padding: 25px 20px;
-            }
-
-
-            .data {
-                display: block;
-            }
-
-            .label {
-                width: 100%;
-
-                display: block;
-
-                margin-bottom: 5px;
-            }
-
-
-            .marquee span {
-                font-size: 22px;
+            .ending-flowers {
+                font-size: 45px;
+                gap: 10px;
             }
 
         }
 
     </style>
+
 </head>
 
 
 <body>
 
 
-    <!-- =========================
-         MENU
-    ========================= -->
+    <!-- ================= LOGIN ================= -->
 
-    <nav>
+    <div id="loginPage">
 
-        <ul>
+        <div class="login-box">
 
-            <li>
-                <a href="#home">Home</a>
-            </li>
-
-            <li>
-                <a href="#biodata">Biodata</a>
-            </li>
-
-            <li>
-                <a href="#portfolio">Portfolio</a>
-            </li>
-
-        </ul>
-
-    </nav>
-
-
-
-    <!-- =========================
-         HOME
-    ========================= -->
-
-    <div class="container" id="home">
-
-        <h1>
-            STT Terpadu Nurul Fikri
-        </h1>
-
-        <p>
-            Kampus Technopreneur di Indonesia
-        </p>
-
-    </div>
-
-
-
-    <!-- =========================
-         BIODATA
-    ========================= -->
-
-    <div id="biodata">
-
-        <h2>
-            👤 Biodata Mahasiswa
-        </h2>
-
-
-        <div class="data">
-
-            <div class="label">
-                Nama
+            <div class="lock">
+                🔐
             </div>
 
-            <div class="isi">
-                Adam Pandhita
-            </div>
-
-        </div>
-
-
-        <div class="data">
-
-            <div class="label">
-                Kelas
-            </div>
-
-            <div class="isi">
-                Informatika
-            </div>
-
-        </div>
-
-
-        <div class="data">
-
-            <div class="label">
-                NIM
-            </div>
-
-            <div class="isi">
-                Berapa yaaa
-            </div>
-
-        </div>
-
-
-        <div class="data">
-
-            <div class="label">
-                Hobby
-            </div>
-
-            <div class="isi">
-                Coding, Networking, dan Bermain Game
-            </div>
-
-        </div>
-
-
-        <!-- ALASAN -->
-
-        <div class="alasan">
-
-            <h3>
-                Alasan Kuliah di STT-NF
-            </h3>
+            <h1>Welcome Lumer 🌸</h1>
 
             <p>
-
-                Saya memilih STT Terpadu Nurul Fikri karena
-                saya tertarik dengan bidang teknologi informasi,
-                khususnya pemrograman dan networking. Saya ingin
-                mengembangkan kemampuan dan mendapatkan pengalaman
-                yang dapat membantu saya di dunia kerja.
-
+                Ada sesuatu kecil buat kamu...
             </p>
+
+            <input
+                type="text"
+                id="username"
+                placeholder="Username"
+            >
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Password"
+            >
+
+            <button onclick="login()">
+                Masuk 🌷
+            </button>
+
+            <p id="error"></p>
 
         </div>
 
@@ -548,96 +537,287 @@
 
 
 
-    <!-- =========================
-         PORTFOLIO
-    ========================= -->
+    <!-- ================= HALAMAN UTAMA ================= -->
 
-    <div id="portfolio">
-
-        <h2>
-            💻 Portfolio
-        </h2>
+    <div id="mainPage">
 
 
-        <!-- RUNNING TEXT -->
+        <!-- ================= BUNGA PEMBUKA ================= -->
 
-        <div class="marquee">
+        <section class="flower-section">
 
-            <span>
+            <div class="flower flower1">
+                🌸
+            </div>
 
-                🌐 Network Operations Center •
-                💻 Web Development •
-                🔧 Networking •
-                🖥️ Coding •
-                🚀 Technology •
+            <div class="flower flower2">
+                🌷
+            </div>
 
-            </span>
+            <div class="flower flower3">
+                🌹
+            </div>
 
-        </div>
+            <div class="flower flower4">
+                🌻
+            </div>
+
+            <div class="flower flower5">
+                🌷
+            </div>
 
 
+            <h1 class="opening-text">
+                Untuk Lumer... 🌸
+            </h1>
 
-        <!-- NOC -->
-
-        <div class="portfolio-card">
-
-            <h3>
-                🌐 Network Operations Center (NOC)
-            </h3>
-
-            <p>
-
-                Memiliki pengalaman sebagai NOC,
-                melakukan monitoring jaringan,
-                troubleshooting, dan membantu menjaga
-                kestabilan jaringan.
-
+            <p class="sub-text">
+                Bunganya cantik, tapi nggak secantik kamu.
             </p>
 
-        </div>
+        </section>
 
 
 
-        <!-- WEB DEVELOPMENT -->
+        <!-- ================= KARTU UCAPAN ================= -->
 
-        <div class="portfolio-card">
+        <section class="card-section">
 
-            <h3>
-                💻 Web Development
-            </h3>
+            <div class="card">
+
+                <div class="card-flower">
+                    🌸
+                </div>
+
+                <h2>
+                    Untuk Lumer 🤍
+                </h2>
+
+                <p>
+                    Hai Lumer...
+                </p>
+
+                <p>
+                    Aku sebenarnya bingung mau mulai dari mana,
+                    karena ada banyak banget hal yang pengen aku
+                    sampaikan ke kamu.
+                </p>
+
+                <p>
+                    Jadi aku bikin halaman kecil ini khusus buat kamu.
+                    Memang sederhana, cuma ada bunga, tulisan,
+                    dan sedikit kata-kata dari aku.
+                    Tapi aku berharap kamu bisa senyum sedikit
+                    waktu lihat ini. 🌷
+                </p>
+
+                <p>
+                    Kamu lihat kan bunga-bunga yang ada di halaman ini?
+                    Mereka muncul satu per satu, seolah-olah sengaja
+                    datang buat nemenin kamu.
+                </p>
+
+                <p>
+                    Katanya bunga itu cantik.
+                    Ada yang warnanya lembut,
+                    ada yang cerah,
+                    ada yang kelihatan sederhana,
+                    tapi tetap punya keindahannya sendiri.
+                </p>
+
+                <p>
+                    Tapi menurut aku,
+                    bunga-bunga ini masih belum ada apa-apanya
+                    dibanding kamu.
+                </p>
+
+                <p>
+                    Bunga mungkin bisa terlihat cantik ketika mekar,
+                    tapi kamu punya sesuatu yang nggak bisa dimiliki
+                    sama bunga mana pun.
+                </p>
+
+                <p>
+                    Bunga cuma bisa bikin orang tersenyum
+                    karena keindahannya,
+                    sedangkan kamu...
+                    entah kenapa cuma dengan hadir aja
+                    sudah bisa bikin suasana jadi berbeda. 🌸
+                </p>
+
+                <p>
+                    Kalau bunga bisa dipilih untuk jadi yang paling cantik,
+                    mungkin mereka semua bakal berlomba-lomba.
+                    Tapi kalau aku yang disuruh memilih,
+                    kayaknya aku nggak perlu berpikir lama.
+                </p>
+
+                <p>
+                    Karena buat aku,
+                    secantik apa pun bunga yang ada di dunia ini,
+                    tetap aja bakal kalah sama kamu.
+                </p>
+
+                <p>
+                    Jadi kalau nanti kamu merasa
+                    kamu nggak secantik yang kamu kira,
+                    coba lihat lagi halaman ini.
+                    Ada banyak bunga di sini,
+                    tapi tetap ada satu orang
+                    yang menurut aku paling cantik.
+                </p>
+
+                <p>
+                    Dan orang itu adalah kamu, Lumer. 🤍
+                </p>
+
+                <p>
+                    Aku juga nggak tahu apakah kata-kata ini
+                    bisa menggambarkan semuanya dengan sempurna.
+                    Mungkin masih jauh dari cukup.
+                    Tapi setidaknya aku pengen kamu tahu
+                    kalau ada seseorang yang melihat kamu
+                    sebagai sesuatu yang berharga.
+                </p>
+
+                <p>
+                    Kamu nggak harus selalu sempurna.
+                    Kamu nggak harus selalu terlihat baik-baik saja.
+                    Kamu cukup jadi diri kamu sendiri.
+                    Karena justru itu yang bikin kamu berbeda.
+                </p>
+
+                <p>
+                    Dan kalau suatu hari kamu melihat bunga,
+                    aku harap kamu ingat sedikit sama halaman ini.
+                    Ingat kalau pernah ada seseorang
+                    yang bilang bahwa bunga itu memang cantik,
+                    tapi tetap nggak secantik Lumer. 🌷
+                </p>
+
+                <p>
+                    Jadi untuk kamu,
+                    terima kasih sudah menjadi seseorang
+                    yang punya tempat tersendiri
+                    di dalam cerita ini.
+                </p>
+
+                <p>
+                    Aku nggak tahu halaman ini bakal kamu ingat
+                    sampai kapan.
+                    Tapi aku harap,
+                    setidaknya untuk beberapa menit setelah kamu
+                    membaca semuanya,
+                    kamu bisa tersenyum.
+                </p>
+
+                <p class="last-message">
+                    Karena kalau bunga bisa dibuat untuk seseorang,
+                    bunga-bunga ini aku buat untuk kamu. 🌸
+                    Dan kalau harus memilih antara semua bunga
+                    dengan kamu...
+                    aku tetap pilih kamu. 🤍
+                </p>
+
+                <div class="signature">
+                    — dari seseorang yang cuma ingin melihat Lumer tersenyum 🌷
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= PENUTUP ================= -->
+
+        <section class="ending">
+
+            <div class="ending-flowers">
+
+                <span>🌷</span>
+                <span>🌸</span>
+                <span>🌹</span>
+                <span>🌻</span>
+                <span>🌷</span>
+
+            </div>
+
+
+            <h2>
+                Lumer, kamu cantik. 🌸
+            </h2>
 
             <p>
-
-                Memiliki pengalaman dan ketertarikan
-                dalam pengembangan website menggunakan
-                HTML, CSS, dan JavaScript.
-
+                Bunga-bunga ini mungkin bisa mekar dan terlihat indah,
+                tapi tetap saja nggak bisa mengalahkan kamu.
+                Jadi jangan lupa senyum ya,
+                karena senyum kamu juga salah satu hal
+                yang bikin semuanya terasa lebih indah. 🤍
             </p>
 
-        </div>
 
+            <div class="big-flower">
+                🌸
+            </div>
 
-
-        <!-- NETWORKING -->
-
-        <div class="portfolio-card">
-
-            <h3>
-                🔧 Networking
-            </h3>
-
-            <p>
-
-                Memahami dasar jaringan komputer,
-                IP Address, DHCP, router, switch,
-                WiFi, dan troubleshooting jaringan.
-
-            </p>
-
-        </div>
-
+        </section>
 
     </div>
+
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        function login() {
+
+            const usernameBenar = "lumer";
+            const passwordBenar = "lumer";
+
+
+            const username =
+                document.getElementById("username").value;
+
+            const password =
+                document.getElementById("password").value;
+
+
+            const error =
+                document.getElementById("error");
+
+
+            if (
+                username === usernameBenar &&
+                password === passwordBenar
+            ) {
+
+                document.getElementById("loginPage")
+                    .style.display = "none";
+
+
+                document.getElementById("mainPage")
+                    .style.display = "block";
+
+
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+
+            }
+
+            else {
+
+                error.innerHTML =
+                    "Username atau password salah 😭";
+
+            }
+
+        }
+
+    </script>
 
 
 </body>
