@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STT Terpadu Nurul Fikri</title>
+
+    <style>
+        /* =========================
+           DASAR
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f5f9;
+            color: #333;
+            min-height: 100vh;
+        }
+
+
+        /* =========================
+           MENU NAVIGASI
+        ========================= */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            background: #1769aa;
+            padding: 15px 20px;
+
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        nav ul {
+            list-style: none;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+
+            padding: 8px 12px;
+            border-radius: 8px;
+
+            transition: 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background: white;
+            color: #1769aa;
+        }
+
+
+        /* =========================
+           HEADER / HOME
+        ========================= */
+
+        .container {
+            width: 90%;
+            max-width: 900px;
+
+            margin: 50px auto 30px;
+            padding: 45px 25px;
+
+            text-align: center;
+
+            background: white;
+            border-radius: 20px;
+
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+
+            transition: 0.3s ease;
+        }
+
+        .container:hover {
+            transform: translateY(-5px);
+
+            box-shadow:
+                0 12px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .container h1 {
+            color: #1769aa;
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .container p {
+            color: #666;
+            font-size: 18px;
+        }
+
+
+        /* =========================
+           BIODATA
+        ========================= */
+
+        #biodata {
+            width: 90%;
+            max-width: 900px;
+
+            margin: 0 auto 40px;
+            padding: 30px;
+
+            background: white;
+
+            border-left: 6px solid #1769aa;
+            border-radius: 15px;
+
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+
+            transition: 0.3s ease;
+        }
+
+        #biodata:hover {
+            transform: translateY(-5px);
+
+            box-shadow:
+                0 12px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        #biodata h2 {
+            color: #1769aa;
+            margin-bottom: 25px;
+            font-size: 24px;
+        }
+
+
+        /* DATA BIODATA */
+
+        .data {
+            display: flex;
+
+            padding: 14px;
+
+            border-bottom: 1px solid #eee;
+            border-radius: 8px;
+
+            transition: 0.3s ease;
+        }
+
+        .data:hover {
+            background: #f0f7ff;
+
+            transform: translateX(5px);
+        }
+
+        .data:last-child {
+            border-bottom: none;
+        }
+
+        .label {
+            width: 130px;
+
+            font-weight: bold;
+            color: #555;
+        }
+
+        .isi {
+            flex: 1;
+            color: #333;
+        }
+
+
+        /* =========================
+           ALASAN
+        ========================= */
+
+        .alasan {
+            margin-top: 20px;
+            padding: 20px;
+
+            background: #f5f9fd;
+
+            border-radius: 10px;
+
+            line-height: 1.6;
+
+            transition: 0.3s ease;
+        }
+
+        .alasan:hover {
+            background: #eaf4ff;
+            transform: scale(1.01);
+        }
+
+        .alasan h3 {
+            color: #1769aa;
+            margin-bottom: 10px;
+        }
+
+
+        /* =========================
+           PORTFOLIO
+        ========================= */
+
+        #portfolio {
+            width: 90%;
+            max-width: 900px;
+
+            margin: 0 auto 50px;
+            padding: 30px;
+
+            background: white;
+
+            border-radius: 15px;
+
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+
+            transition: 0.3s ease;
+        }
+
+        #portfolio:hover {
+            transform: translateY(-5px);
+
+            box-shadow:
+                0 12px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        #portfolio h2 {
+            color: #1769aa;
+            margin-bottom: 20px;
+        }
+
+
+        /* =========================
+           RUNNING TEXT WARNA WARNI
+        ========================= */
+
+        .marquee {
+            width: 100%;
+
+            overflow: hidden;
+            white-space: nowrap;
+
+            margin-bottom: 25px;
+        }
+
+        .marquee span {
+            display: inline-block;
+
+            font-size: 26px;
+            font-weight: bold;
+
+            background: linear-gradient(
+                90deg,
+                red,
+                orange,
+                yellow,
+                lime,
+                cyan,
+                blue,
+                violet,
+                red
+            );
+
+            background-size: 400% auto;
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+            animation:
+                jalan 10s linear infinite,
+                warna 4s linear infinite;
+        }
+
+
+        /* Gerakan kanan ke kiri */
+
+        @keyframes jalan {
+
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+
+        }
+
+
+        /* Animasi warna */
+
+        @keyframes warna {
+
+            0% {
+                background-position: 0% center;
+            }
+
+            100% {
+                background-position: 400% center;
+            }
+
+        }
+
+
+        /* =========================
+           KARTU PORTFOLIO
+        ========================= */
+
+        .portfolio-card {
+            padding: 20px;
+
+            margin-bottom: 15px;
+
+            background: #f5f9fd;
+
+            border-left: 5px solid #1769aa;
+            border-radius: 10px;
+
+            transition: 0.3s ease;
+        }
+
+        .portfolio-card:hover {
+            transform: translateX(8px);
+
+            background: #eaf4ff;
+
+            box-shadow:
+                0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .portfolio-card h3 {
+            color: #1769aa;
+
+            margin-bottom: 8px;
+        }
+
+        .portfolio-card p {
+            line-height: 1.6;
+            color: #555;
+        }
+
+
+        /* =========================
+           RESPONSIVE HP
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            nav {
+                padding: 12px 5px;
+            }
+
+            nav ul {
+                gap: 5px;
+            }
+
+            nav ul li a {
+                font-size: 13px;
+                padding: 8px 7px;
+            }
+
+
+            .container {
+                margin-top: 40px;
+                padding: 35px 20px;
+            }
+
+            .container h1 {
+                font-size: 27px;
+            }
+
+            .container p {
+                font-size: 16px;
+            }
+
+
+            #biodata,
+            #portfolio {
+                padding: 25px 20px;
+            }
+
+
+            .data {
+                display: block;
+            }
+
+            .label {
+                width: 100%;
+
+                display: block;
+
+                margin-bottom: 5px;
+            }
+
+
+            .marquee span {
+                font-size: 22px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         MENU
+    ========================= -->
+
+    <nav>
+
+        <ul>
+
+            <li>
+                <a href="#home">Home</a>
+            </li>
+
+            <li>
+                <a href="#biodata">Biodata</a>
+            </li>
+
+            <li>
+                <a href="#portfolio">Portfolio</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+
+    <!-- =========================
+         HOME
+    ========================= -->
+
+    <div class="container" id="home">
+
+        <h1>
+            STT Terpadu Nurul Fikri
+        </h1>
+
+        <p>
+            Kampus Technopreneur di Indonesia
+        </p>
+
+    </div>
+
+
+
+    <!-- =========================
+         BIODATA
+    ========================= -->
+
+    <div id="biodata">
+
+        <h2>
+            👤 Biodata Mahasiswa
+        </h2>
+
+
+        <div class="data">
+
+            <div class="label">
+                Nama
+            </div>
+
+            <div class="isi">
+                Adam Pandhita
+            </div>
+
+        </div>
+
+
+        <div class="data">
+
+            <div class="label">
+                Kelas
+            </div>
+
+            <div class="isi">
+                Informatika
+            </div>
+
+        </div>
+
+
+        <div class="data">
+
+            <div class="label">
+                NIM
+            </div>
+
+            <div class="isi">
+                Berapa yaaa
+            </div>
+
+        </div>
+
+
+        <div class="data">
+
+            <div class="label">
+                Hobby
+            </div>
+
+            <div class="isi">
+                Coding, Networking, dan Bermain Game
+            </div>
+
+        </div>
+
+
+        <!-- ALASAN -->
+
+        <div class="alasan">
+
+            <h3>
+                Alasan Kuliah di STT-NF
+            </h3>
+
+            <p>
+
+                Saya memilih STT Terpadu Nurul Fikri karena
+                saya tertarik dengan bidang teknologi informasi,
+                khususnya pemrograman dan networking. Saya ingin
+                mengembangkan kemampuan dan mendapatkan pengalaman
+                yang dapat membantu saya di dunia kerja.
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================
+         PORTFOLIO
+    ========================= -->
+
+    <div id="portfolio">
+
+        <h2>
+            💻 Portfolio
+        </h2>
+
+
+        <!-- RUNNING TEXT -->
+
+        <div class="marquee">
+
+            <span>
+
+                🌐 Network Operations Center •
+                💻 Web Development •
+                🔧 Networking •
+                🖥️ Coding •
+                🚀 Technology •
+
+            </span>
+
+        </div>
+
+
+
+        <!-- NOC -->
+
+        <div class="portfolio-card">
+
+            <h3>
+                🌐 Network Operations Center (NOC)
+            </h3>
+
+            <p>
+
+                Memiliki pengalaman sebagai NOC,
+                melakukan monitoring jaringan,
+                troubleshooting, dan membantu menjaga
+                kestabilan jaringan.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- WEB DEVELOPMENT -->
+
+        <div class="portfolio-card">
+
+            <h3>
+                💻 Web Development
+            </h3>
+
+            <p>
+
+                Memiliki pengalaman dan ketertarikan
+                dalam pengembangan website menggunakan
+                HTML, CSS, dan JavaScript.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- NETWORKING -->
+
+        <div class="portfolio-card">
+
+            <h3>
+                🔧 Networking
+            </h3>
+
+            <p>
+
+                Memahami dasar jaringan komputer,
+                IP Address, DHCP, router, switch,
+                WiFi, dan troubleshooting jaringan.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+</body>
+
+</html>
